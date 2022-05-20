@@ -3,7 +3,7 @@ import * as React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+
 
 type DataProps = {
   site: {
@@ -16,7 +16,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
   location,
 }) => (
   <Layout>
-    <Seo title="Using TypeScript" />
+    
     <h1>
       Gatsby supports <b>TypeScript by default</b>
     </h1>

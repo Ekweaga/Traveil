@@ -1,0 +1,28 @@
+[
+    {
+"img":"../assets/images/t1.jpg",
+"name":"London",
+"button":"View destination"
+},
+{
+    "img":"../assets/images/t2.jpg",
+    "name":"Tian Tab Buddha",
+    "button":"View destination"
+},
+{
+    "img":"../assets/images/t3.jpg",
+    "name":" Ivory Coast",
+    "button":"View destination"
+},
+{
+    "img":"../assets/images/t4.jpg",
+    "name":"Turkey",
+    "button":"View destination"
+},
+{
+    "img":"../assets/images/t5.jpg",
+    "name":"Mexico",
+    "button":"View destination"
+}
+
+]
