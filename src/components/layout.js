@@ -12,6 +12,7 @@ import styled from "styled-components"
 import Header from "./header"
 
 import { GlobalStyle } from "./styles/GlobalStyles"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
  
@@ -27,9 +28,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-        
-        </footer>
+       <Footer/>
       </div>
     </>
   )

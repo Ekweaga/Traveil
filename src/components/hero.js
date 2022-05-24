@@ -47,7 +47,7 @@ z-index:-111;
   right:0;
   bottom:0;
   z-index:2555;
-  background:rgba(0,0,0,0.3);
+  
 }
 
 `

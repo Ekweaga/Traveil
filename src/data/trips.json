@@ -14,11 +14,7 @@
     "name":" Ivory Coast",
     "button":"View destination"
 },
-{
-    "img":"../assets/images/t4.jpg",
-    "name":"Turkey",
-    "button":"View destination"
-},
+
 {
     "img":"../assets/images/t5.jpg",
     "name":"Mexico",
