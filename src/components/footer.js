@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect,useState} from 'react'
 
 function Footer() {
+    useEffect(()=>{
+        Aos.init({duration:1000})
+      },[])
   return (
    <FooterContainer>
-       <FooterLinksWrapper>
+       <FooterLinksWrapper data-aos="zoom-in">
            <FooterDesc>
                <h1>Traveil</h1>
                <p>We ensure to create and provide the best experiences for our customers</p>
@@ -15,21 +21,21 @@ function Footer() {
        <FooterLinksWrapper>
        <FooterLinkItems>
                <FooterLinkTitle>Contact Us</FooterLinkTitle>
-               <FooterLink to="/about">About</FooterLink>
-               <FooterLink to="/trips">Destinations</FooterLink>
-               <FooterLink to="/contact">Contact</FooterLink>
+               <FooterLink to="/about" data-aos="slide-up">About</FooterLink>
+               <FooterLink to="/trips" data-aos="slide-up">Destinations</FooterLink>
+               <FooterLink to="/contact" data-aos="slide-up">Contact</FooterLink>
            </FooterLinkItems>
        <FooterLinkItems>
                <FooterLinkTitle>Videos</FooterLinkTitle>
-               <FooterLink to="">Influencer</FooterLink>
-               <FooterLink to="">Services</FooterLink>
-               <FooterLink to="">Traveil</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Influencer</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Services</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Traveil</FooterLink>
            </FooterLinkItems>
            <FooterLinkItems>
                <FooterLinkTitle>Social Media</FooterLinkTitle>
-               <FooterLink to="">Twitter</FooterLink>
-               <FooterLink to="">Instagram</FooterLink>
-               <FooterLink to="">Pinterest</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Twitter</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Instagram</FooterLink>
+               <FooterLink to="" data-aos="slide-up">Pinterest</FooterLink>
            </FooterLinkItems>
        </FooterLinksWrapper>
      

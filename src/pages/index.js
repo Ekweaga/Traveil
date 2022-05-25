@@ -13,6 +13,10 @@ import Email from "../components/email"
 
 
 const IndexPage = () => (
+
+  
+
+ 
   <Layout>
 
     <Hero />
@@ -22,6 +26,7 @@ const IndexPage = () => (
     <Email />
 
   </Layout>
+  
 )
 
 export default IndexPage

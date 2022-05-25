@@ -37,14 +37,14 @@ const Header = () => {
    <Nav>
 <Link to='/' style={{color:'white',textDecoration:'none',cursor:'pointer',padding:'10px'}}
 >TRAVEIL</Link>
-<Bars/>
-<Cancel/>
-<NavMenu>
+{close && <Bars onClick={tooglenav}/>}
+{open && <Cancel onClick={toogleclose}/>}
+{(toggle || screenwidth > 500) && <NavMenu>
   {menudata.map((item)=>{
     return (  <NavLink to={item.link}>{item.title}</NavLink>)
   })}
   
-</NavMenu>
+</NavMenu>}
 <Navbtn>
   <Button primary="true" round="true" to="/trips">Book a Flight</Button>
 </Navbtn>
@@ -75,6 +75,12 @@ display:flex;
 align-items:center;
 text-decoration:none;
 margin-left:15px;
+
+
+@media screen and (max-width:700px){
+  margin-top:50px;
+  margin-right:25px;
+}
 `
 const Bars = styled(FaBars)
 `
@@ -111,7 +117,12 @@ margin-right:30px;
 
 
 @media screen and (max-width:700px){
-  display:none;
+  display:flex;
+  align-items:center;
+  margin-right:30px;
+  flex-direction:column;
+  margin-top:250px;
+  
 }
 `
 const  Navbtn = styled.div`

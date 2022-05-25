@@ -1,27 +1,48 @@
 import React from 'react'
 import styled from 'styled-components'
 import t4 from '../assets/images/t4.jpg'
-import { Button } from './button'
+import { Button } from './button';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect,useState} from 'react'
 
 function Email() {
+    const [inputset, setinputset]= useState("");
+    const [error, seterror]=useState(null);
+    
+    const handlesubmit = (e)=>{
+        e.preventDefault();
+        if(inputset != '' ){
+            alert("Email has been sent successfully");
+            setinputset("")
+        }
+        else{
+            alert("Input is empty, check")
+        }
+    }
+    useEffect(()=>{
+        Aos.init({duration:1000})
+      },[])
   return (
-    <EmailContainer>
+    <EmailContainer data-aos="zoom-in">
         <EmailContent>
             <h1>Get Access to our Exclusive travel bonuses</h1>
             <p>Sign up for your newsletter below to get $350 discount off your first trip</p>
-            <form>
-                <FormWrap>
+            <form onSubmit={handlesubmit}>
+                <FormWrap >
                     <label>
-                        <input type="email" placeholder="Enter Email" id="email"/>
+                        <input type="email" placeholder="Enter Email" id="email"data-aos="slide-up" value={inputset} onChange={(e)=>setinputset(e.target.value)}/>
                     </label>
-                    <Button as="button" primary="true" round="true" type="submit" css={`height:48px;
+                    <Button as="button" primary="true" data-aos="slide-up" round="true" type="submit" css={`height:48px;
                     @media screen and (max-width:768px){
                         width:100%;
                         min-width:350px;
+                        margin-top:30px
                     }
                     @media screen and (max-width:400px){
                         width:100%;
                         min-width:250px;
+                        margin-top:30px;
                     }
                     
                     `}>Sign Up</Button>

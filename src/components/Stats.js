@@ -2,11 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import {GiEarthAmerica} from 'react-icons/gi';
 import{MdAirplanemodeActive, MdTimer} from 'react-icons/md'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect,useState} from 'react'
 
 import{FaMoneyCheck} from 'react-icons/fa'
 
 function Stats() {
-
+  useEffect(()=>{
+    Aos.init({duration:1000})
+  },[])
   const StatsData = [
     {
         icon : (<GiEarthAmerica style={{color:'blue'}} />),
@@ -32,13 +37,13 @@ function Stats() {
   ]
   return (
    <StatsContainer>
-       <Heading>
+       <Heading data-aos="zoom-in">
             Why Choose Us?
        </Heading>
        <Wrapper>
         {StatsData.map((data,index)=>{
           return (
-            <StatsBox key={index}>
+            <StatsBox key={index} data-aos="slide-up">
               <Icon>{data.icon}</Icon>
               <Title>{data.title}</Title>
               <Desc>{data.desc}</Desc>

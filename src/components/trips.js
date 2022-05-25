@@ -6,6 +6,9 @@ import {StaticImage} from 'gatsby-plugin-image'
 import t1 from "../assets/images/t3.jpg"
 import {Button} from './button'
 import {ImLocation} from 'react-icons/im'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect,useState} from 'react'
 
 function Trips() {
     const data = useStaticQuery(graphql`
@@ -27,12 +30,18 @@ function Trips() {
         }
       }
     `)
+
+    useEffect(()=>{
+      Aos.init({duration:1000})
+    },[])
     function gettrips(data){
       const tripsarray = [];
       data.allTripsJson.edges.forEach((item,index)=>{
         tripsarray.push(
-          <ProductCard key={index}>
-            <ProductImg src={item.node.img.childImageSharp.fluid.src} fluid={item.node.img.childImageSharp.fluid}  />
+          <ProductCard key={index}  data-aos="slide-up">
+            <ProductImg src={item.node.img.childImageSharp.fluid.src} fluid={item.node.img.childImageSharp.fluid} 
+            
+    />
             <ProductInfo>
               <TextWrap>
                 <ImLocation/>
@@ -47,15 +56,15 @@ function Trips() {
     }
 
     
-
+  
   
  return (
   <> <Productscontainer>
-       <Productsheading>
+       <Productsheading  data-aos="fade-in">
            
           Mark A Destination
        </Productsheading>
-       <Productswrapper>
+       <Productswrapper  data-aos="fade-in">
               {gettrips(data)}
            </Productswrapper>
    </Productscontainer>

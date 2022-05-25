@@ -6,10 +6,15 @@ import {FaRegLightbulb} from 'react-icons/fa'
 
 import tq from '../assets/images/1.jpeg'
 import tr from '../assets/images/tx.jpeg';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect,useState} from 'react'
 
 function Testony() {
   
-   
+    useEffect(()=>{
+        Aos.init({duration:1000})
+      },[])
   return (
     <TestimonialsContainer>
 
@@ -17,14 +22,14 @@ function Testony() {
         <Description>What People are Saying</Description>
         <ContentWrapper>
             <ColumnOne>
-            <Testimonial>
+            <Testimonial data-aos="slide-up">
                 <IoMdCheckmarkCircleOutline style={{color:'#f9b19b',marginBottom:'2rem',fontSize:'2rem'}}/>
                 <h3>Jackson Mendes</h3>
                 <p>The greatest experience of my travelling career. It was fun exploring the mountains and they made it super easy
                     to book my trip and accommodation
                 </p>
             </Testimonial>
-            <Testimonial>
+            <Testimonial data-aos="slide-up">
                 <FaRegLightbulb style={{color:'#3fffa8',marginBottom:'2rem',fontSize:'2rem'}}/>
                 <h3>Rihanna Victoria</h3>
                 <p>The greatest experience of my travelling career. It was fun exploring the mountains and they made it super easy
@@ -33,8 +38,8 @@ function Testony() {
             </Testimonial>
             </ColumnOne>
             <ColumnTwo>
-          <img src={tq} style={{height:'100%', borderRadius:'10px',width:'100%',marginTop:'20px'}}/>
-          <img src={tr} style={{height:'100%', borderRadius:'10px',width:'100%'}}/>
+          <img src={tq} style={{height:'100%', borderRadius:'10px',width:'100%',marginTop:'20px'}} data-aos="fade-in"/>
+          <img src={tr} style={{height:'100%', borderRadius:'10px',width:'100%',marginTop:'20px'}} data-aos="slide-right"/>
             </ColumnTwo>
         </ContentWrapper>
        
