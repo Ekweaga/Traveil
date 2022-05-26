@@ -17,7 +17,8 @@ function Hero() {
         TRAVEIL
     </HeroH1>
     <HeroP>Makes travelling easier</HeroP>
-    <Button primary="true" big="true" round="true" to='/trips'>Travel Now</Button>
+   
+    <Button primary="true" round="true" to="/trips">Travel Now</Button>
   </HeroItems>
 
 </HeroContent>

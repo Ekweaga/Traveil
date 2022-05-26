@@ -16,7 +16,7 @@ const Header = () => {
    const [toggle,settoogle] = useState(false);
   const [close,setclose] = useState(true);
   const [open,setopen] = useState(false);
-  const [screenwidth, setscreenwidth] = useState(window.innerWidth)
+  const [screenwidth, setscreenwidth] = useState(null)
   const tooglenav=()=>{
     settoogle(true)
     setclose(false)
@@ -29,7 +29,10 @@ const Header = () => {
   }
   useEffect(()=>{
     const changewidth = ()=>{
-      setscreenwidth(window.innerWidth)
+      if(typeof window !== "undefined"){
+        setscreenwidth(window.innerWidth)
+      }
+     
     }
     window.addEventListener('resize',changewidth)
   },[])
@@ -45,7 +48,7 @@ const Header = () => {
   })}
   
 </NavMenu>}
-<Navbtn>
+ <Navbtn>
   <Button primary="true" round="true" to="/trips">Book a Flight</Button>
 </Navbtn>
    </Nav>
